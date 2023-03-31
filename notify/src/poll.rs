@@ -60,7 +60,7 @@ mod data {
 
         /// Update internal timestamp.
         pub(super) fn update_timestamp(&mut self) {
-            self.now = Instant::now();
+            self.now = instant::Instant::now();
         }
 
         /// Create [`WatchData`].
