@@ -43,7 +43,7 @@ mod data {
         build_hasher: Option<RandomState>,
 
         // current timestamp for building Data.
-        now: Instant,
+        now: instant::Instant,
     }
 
     impl DataBuilder {
@@ -54,7 +54,7 @@ mod data {
             Self {
                 emitter: EventEmitter::new(event_handler),
                 build_hasher: compare_content.then(RandomState::default),
-                now: Instant::now(),
+                now: instant::Instant::now(),
             }
         }
 
