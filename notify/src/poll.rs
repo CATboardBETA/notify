@@ -43,7 +43,10 @@ mod data {
         build_hasher: Option<RandomState>,
 
         // current timestamp for building Data.
+        #[cfg(target_arch = "wasm32-unknown-unknown")]
         now: instant::Instant,
+        #[cfg(not(target_arch = "wasm32-unknown-unknown"))]
+        now: std::time::Instant,
     }
 
     impl DataBuilder {
